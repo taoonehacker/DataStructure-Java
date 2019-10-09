@@ -138,7 +138,4 @@ public class ArrayTest {
         assertEquals(9,array.getSize());
     }
 
-
-
-
 }

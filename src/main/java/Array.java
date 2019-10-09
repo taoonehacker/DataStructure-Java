@@ -1,5 +1,3 @@
-import java.security.PublicKey;
-import java.util.Calendar;
 
 public class Array {
   private int[] data;
@@ -105,7 +103,5 @@ public class Array {
   public int removeFisrt(){
     return remove(0);
   }
-
-
 
 }
