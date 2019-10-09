@@ -70,7 +70,21 @@ public class ArrayTest {
         assertEquals(1,array.getSize());
     }
 
+    @Test
+    public void getTest(){
+        array.addFirst(1);
+        assertEquals(1,array.get(0));
+    }
 
-
+    @Test
+    public void setTest(){
+        array.addFirst(1);
+        array.add(1,2);
+        array.add(2,3);
+        array.add(3,4);
+        array.addLast(5);
+        array.set(3,10);
+        assertEquals(10,array.get(3));
+    }
 
 }

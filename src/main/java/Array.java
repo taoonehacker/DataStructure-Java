@@ -1,4 +1,5 @@
 import java.security.PublicKey;
+import java.util.Calendar;
 
 public class Array {
   private int[] data;
@@ -42,6 +43,32 @@ public class Array {
     data[index]=e;
     size++;
   }
+
+  public int get(int index){
+    if(index<0||index>size)
+      throw new IllegalArgumentException("Get failed. Index is illegal.");
+    return this.data[index];
+  }
+
+  public void set(int index,int e){
+    if(index<0|| index>size)
+      throw new IllegalArgumentException("Set failed. Index is illegal.");
+    data[index]=e;
+  }
+
+  public String toString(){
+    StringBuffer sb = new StringBuffer();
+    sb.append(String.format("Array:size=%d,capacity=%d\n",size, getCapacity()));
+    sb.append("[");
+    for (int i = 0; i < size; i++) {
+      sb.append(data[i]);
+      if(i!=size-1)
+        sb.append(",");
+    }
+    sb.append("]");
+    return sb.toString();
+  }
+
 
 
 }
