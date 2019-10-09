@@ -87,4 +87,58 @@ public class ArrayTest {
         assertEquals(10,array.get(3));
     }
 
+    @Test
+    public void containsTest() {
+        array = new Array(20);
+        for (int i = 0; i < 10; i++) {
+             array.addLast(i);
+        }
+        assertTrue(array.contains(8));
+        assertFalse(array.contains(12));
+    }
+
+    @Test
+    public void findTest() {
+        array = new Array(20);
+        for (int i = 0; i < 10; i++) {
+            array.addLast(i);
+        }
+        assertEquals(6,array.find(6));
+        assertTrue(array.find(6)>0);
+        assertEquals(-1,array.find(12));
+    }
+
+    @Test
+    public void removeTest(){
+        array = new Array(20);
+        for (int i = 0; i < 10; i++) {
+            array.addLast(i);
+        }
+        array.remove(6);
+        assertEquals(9,array.getSize());
+    }
+
+    @Test
+    public void  removeLastTest() {
+        array = new Array(20);
+        for (int i = 0; i < 10; i++) {
+            array.addLast(i);
+        }
+        array.removeLast();
+        assertEquals(9,array.getSize());
+    }
+
+    @Test
+    public void removeFirstTest(){
+        array = new Array(20);
+        for (int i = 0; i < 10; i++) {
+            array.addLast(i);
+        }
+        array.removeFisrt();
+        assertEquals(9,array.getSize());
+    }
+
+
+
+
 }

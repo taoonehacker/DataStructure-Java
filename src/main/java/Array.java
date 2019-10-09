@@ -69,6 +69,43 @@ public class Array {
     return sb.toString();
   }
 
+  public boolean contains(int e){
+    for (int i = 0; i < size; i++) {
+      if(data[i]==e)
+        return true;
+    }
+    return false;
+  }
+
+  public int find(int e){
+    for (int i = 0; i < size; i++) {
+      if(data[i]==e)
+        return i;
+    }
+    return -1;
+  }
+
+  public int remove(int index){
+    if(index<0|| index>size)
+      throw new IllegalArgumentException("Remove failed. index is illegal.");
+    int ret = data[index];
+
+    for (int i = index+1; i < size; i++) {
+      data[i-1]=data[i];
+    }
+    size--;
+    return ret;
+  }
+
+  public int removeLast()
+  {
+    return remove(size);
+  }
+
+  public int removeFisrt(){
+    return remove(0);
+  }
+
 
 
 }
