@@ -121,7 +121,16 @@ public class TArrayTest {
         assertEquals(4,(int)array.get(3));
     }
 
-
-
+    @Test
+    public void resizeTest(){
+        for (int i = 0; i < 30; i++) {
+            array.addLast(i);
+        }
+        assertEquals(40,array.getCapacity());
+        for (int i = 0; i < 25; i++) {
+            array.removeLast();
+        }
+        assertEquals(5,array.getCapacity());
+    }
 
 }

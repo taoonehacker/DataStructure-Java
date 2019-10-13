@@ -27,10 +27,11 @@ public class TArray<T> {
 
     public void add(int index,T e){
 
-        if(size == data.length)
-            throw new IllegalArgumentException("Add Failed. Array is full.");
         if(index < 0|| index > size)
             throw new IllegalArgumentException("Add Failed. Required index >=0 and index <= size.");
+
+        if(size==data.length)
+            resize(data.length*2);
 
         for (int i = size-1; i >=index; i--)
             data[i+1]=data[i];
@@ -83,6 +84,10 @@ public class TArray<T> {
         }
         size--;
         data[size]=null;
+
+        if(size == data.length/2)
+            resize(data.length/2);
+
         return ret;
     }
 
@@ -104,7 +109,6 @@ public class TArray<T> {
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("Array: size = %d, capacity = %d\n",size,data.length));
         sb.append("[");
-
         for (int i = 0; i < size; i++) {
             sb.append(data[i]);
             if(i!=size-1)
@@ -112,6 +116,14 @@ public class TArray<T> {
         }
         sb.append("]");
         return  sb.toString();
+    }
+
+    public void resize(int newCapacity){
+        T[] newData = (T[])new Object[newCapacity];
+        for (int i = 0; i < size; i++) {
+            newData[i] = data[i];
+        }
+        data = newData;
     }
 
 }
