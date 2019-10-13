@@ -7,5 +7,14 @@ public class Main {
         }
 
         System.out.println(array);
+
+        TArray<Student> tArray = new TArray<>();
+
+        tArray.addLast(new Student("Alice",100));
+        tArray.addLast(new Student("Bob",80));
+        tArray.addLast(new Student("Charlie",88));
+
+        System.out.println(tArray);
+
     }
 }

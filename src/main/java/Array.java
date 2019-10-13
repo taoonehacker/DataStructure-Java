@@ -5,7 +5,7 @@ public class Array {
 
   public Array(int capacity){
     data = new int[capacity];
-    this.size=0;
+    size=0;
   }
 
   public Array(){
@@ -16,11 +16,11 @@ public class Array {
     return data.length;
   }
   public int getSize(){
-    return this.size;
+    return size;
   }
 
   public boolean isEmpty(){
-    return  this.size==0;
+    return  size==0;
   }
 
   public void addLast(int e){
@@ -95,8 +95,7 @@ public class Array {
     return ret;
   }
 
-  public int removeLast()
-  {
+  public int removeLast() {
     return remove(size);
   }
 
